@@ -82,7 +82,7 @@ class ValueObject(object):
                 dict(zip(args_spec.args[:0:-1], defaults[::-1]))
             )
             self.__dict__.update(
-                dict(list(zip(args_spec.args[1:], args)))
+                dict(list(zip(args_spec.args[1:], args)) + list(kwargs.items()))
             )
 
         verifica_argumentos()
