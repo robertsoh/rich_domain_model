@@ -1,5 +1,7 @@
 from enum import Enum
 
+from django.utils.decorators import classproperty
+
 from apps.common.value_object import ValueObject
 from apps.customers.expiration_date import ExpirationDate
 
@@ -21,3 +23,7 @@ class CustomerStatus(ValueObject):
 
     def is_advanced(self):
         return self.status_type == CustomerStatusType.Advanced and not self.expiration_date.is_expired
+
+    @classmethod
+    def regular(cls):
+        return cls(CustomerStatusType.Regular, ExpirationDate.infinite())
