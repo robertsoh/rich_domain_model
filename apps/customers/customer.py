@@ -1,3 +1,4 @@
+from apps.customers.customer_name import CustomerName
 from apps.customers.customer_status import CustomerStatus
 
 
