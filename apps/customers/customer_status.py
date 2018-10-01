@@ -26,4 +26,4 @@ class CustomerStatus(ValueObject):
 
     @classmethod
     def regular(cls):
-        return cls(CustomerStatusType.Regular, ExpirationDate.infinite())
+        return cls(CustomerStatusType.Regular.value, ExpirationDate.infinite())

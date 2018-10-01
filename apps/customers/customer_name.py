@@ -7,7 +7,7 @@ class CustomerName(ValueObject):
     def __init__(self, value):
         value = value or ''
         if not value:
-            raise ValueError('El nombre del cliente no puede ser vacío')
+            raise ValueError('El nombre del cliente no puede ser nulo o vacío')
         if len(value) > 100:
             raise ValueError('El nombre del cliente es muy largo')
 

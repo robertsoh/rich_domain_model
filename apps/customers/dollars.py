@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from apps.common.result import Result
 from apps.common.value_object import ValueObject
 
 
@@ -20,5 +21,8 @@ class Dollars(ValueObject):
 
     @classmethod
     def create(cls, amount):
-        return cls(amount)
+        try:
+            return Result.ok(cls(amount))
+        except Exception as ex:
+            return Result.fail({'money_spent':  [str(ex)]})
 
