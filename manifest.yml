@@ -1,0 +1,8 @@
+---
+applications:
+- name: rich_domain_model
+  memory: 250M
+  instances: 1
+  buildpack: python_buildpack
+  services:
+  - rich_domain_pgsql
